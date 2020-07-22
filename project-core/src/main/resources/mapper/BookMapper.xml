@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--这里用来练习mybatis的xml形式，也是最基础常用的-->
+<mapper namespace="cn.silentims.mapper.BookMapper">
+
+    <insert id="create" parameterType="cn.silentims.entities.Book">
+        insert into book(id, name, author,price)
+        values (#{id},#{name},#{author},#{price})
+    </insert>
+    <select id="findAll" resultType="cn.silentims.entities.Book">
+        select id,name,author,price from book
+    </select>
+    <select id="findById" resultType="cn.silentims.entities.Book">
+        select id, name, author, price from book where id=#{id}
+    </select>
+
+</mapper>

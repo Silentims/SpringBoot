@@ -1,0 +1,20 @@
+#定义端口号
+server:
+  port: 8001
+
+spring:
+  #定义模块名称
+  application:
+    name: project-core
+
+  #配置jdbc连接
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+#整合mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #定义mapper的xml文件路径
+  type-aliases-package: cn.silentims.entities #所有实体类所在的包
